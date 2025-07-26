@@ -1,6 +1,6 @@
 ## STM32 Nucleo-H755ZI 2-Blink Debug Example
 
-This repo is an example of how to setup dual-core debugging using the [Cortex Debug](https://github.com/Marus/cortex-debug) VSCode Extension. These instructions were particularly made for the STM32 Nucleo-H755ZI development boards.
+This repo is an example of how to setup dual-core debugging using the [Cortex Debug](https://github.com/Marus/cortex-debug) VSCode Extension. These instructions were particularly made for the STM32 Nucleo-H755ZI development boards and use the ST-Link to debug.
 
 This setup currently works on Windows 11 with STM32CubeIDE installed.
 
@@ -29,9 +29,7 @@ These steps were done on Windows 11 with STM32CubeIDE. When you have all the dep
 
     ![alt text](README_assets/image.png)
 
-    I have set global variables count and count2 for the CM7 and CM4 cores respectively to monitor.
-
-    ![alt text](README_assets/image-11.png)
+    I have added global variables count and count2 for the CM7 and CM4 cores respectively to monitor in the **WATCH** tab.
 
 2. Plug in STM32 Nucleo-H755ZI board
 3. Select Run and Debug or press Ctrl+Shift+D
@@ -47,7 +45,7 @@ These steps were done on Windows 11 with STM32CubeIDE. When you have all the dep
 
     ![alt text](README_assets/image-3.png)
 
-6. In the **Call Stack** menu, you can see **Debug CM7** would be **PAUSED ON BREAKPOINT** and **Attach CM4** would be **PAUSED ON ATTACH**. 
+6. In the **CALL STACK** menu, you can see **Debug CM7** would be **PAUSED ON BREAKPOINT** and **Attach CM4** would be **PAUSED ON ATTACH**. 
 
     ![alt text](README_assets/image-4.png)
 
@@ -73,11 +71,14 @@ These steps were done on Windows 11 with STM32CubeIDE. When you have all the dep
     
     ![alt text](README_assets/image-10.png)
 
-    In the **Call Stack** menu, you should now be able to see both LEDs toggle by clicking **Continue** for whichever specified profile you want. The Green LED is on the CM7 and the Yellow LED is on the CM4. You can remove either breakpoints to let the CM4/CM7 blink programs continue running without stopping.
+    In the **CALL STACK** menu, you should now be able to see both LEDs toggle by clicking **Continue** for whichever specified profile you want. The Green LED is on the CM7 and the Yellow LED is on the CM4. You can remove either breakpoints to let the CM4/CM7 blink programs continue running without stopping.
 
     You can use this menu to switch between watching the CM7 and CM4 variables 
 
     ![alt text](README_assets/image-12.png)
+
+    ![alt text](README_assets/image-11.png)
+
 
 9. To end the session, you can stop both of the debugging sessions. I recommend to **Disconnect** the CM4 before you **Stop** the CM7.
 
