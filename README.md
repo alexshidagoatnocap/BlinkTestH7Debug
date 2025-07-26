@@ -2,7 +2,9 @@
 
 This repo is an example of how to setup dual-core debugging using the [Cortex Debug](https://github.com/Marus/cortex-debug) VSCode Extension. These instructions were particularly made for the STM32 Nucleo-H755ZI development boards and use the ST-Link to debug.
 
-This setup currently works on Windows 11 with STM32CubeIDE installed.
+This setup currently works on Windows 11 with STM32CubeIDE installed, and on Arch Linux without STM32CubeIDE.
+
+The steps below are continually being refined to better suit more workflows and toolchains.
 
 ## Setup:
 
@@ -11,11 +13,16 @@ There are two ways you can set this up:
     - No extra setup required, but you might need to [configure the Cortex Debug settings](https://github.com/Marus/cortex-debug/wiki#vscode-settings-for-cortex-debug) to point to the right bin locations. 
 - #### Without STM32CubeIDE
     - Requires: 
+        - [Visual Studio Code](https://code.visualstudio.com/Download)
+        - [STM32Cube for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=stmicroelectronics.stm32-vscode-extension) **(Install the prerelease version)**
+            - With the VSCode extension, the ARM GNU Toolchain, STM32 Programmer CLI, and ST-Link GDB Server are provided, so you do not need to download the next two dependencies. They should be located in a stm32cube/bundles folder.
+                - On Linux, they should be stored in ```/home/$username$/.local/share/stm32cube/bundles/```, but this may vary based on distro.
         - [ARM GNU Toolchain](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads)
-            - You can either use MinGW64 installer only if you are on Windows(You must have MinGW64) or download and extract/tar the zip/archive for all platforms
-        - [STM32CubeProgrammer (Requires ST account to download)](https://www.st.com/en/development-tools/stm32cubeprog.html)
-        - ST-Link GDB Server
-            - Note: This is NOT the ST-LINK server software module on the ST website
+            - Cortex Debug requires arm-none-eabi gdb, nm, and objdump
+            - You can either use MinGW64 installer only if you are on Windows(You must have MinGW64) or download and extract/tar the zip/archive for all platforms.
+        - ST-Link GDB Server and STM32 Programmer CLI
+            - You may choose to download [STM32CubeCLT](https://www.st.com/en/development-tools/stm32cubeclt.html) ***OR*** [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html)
+            >It is also possible to also use the [open-source stlink toolchain](https://github.com/stlink-org/stlink) using st-util for the GDB Server, but its usage differs from the STM32 GDB Server from the packages above. Instructions to integrate it will come out in the future.
     - After downloading the required toolchains, [set up](https://github.com/Marus/cortex-debug/blob/master/debug_attributes.md) your [Cortex Debug extension settings](https://github.com/Marus/cortex-debug/wiki#vscode-settings-for-cortex-debug) to point to the right /bin locations. 
 
 I referenced this issue here to set up my launch.json
