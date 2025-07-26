@@ -51,7 +51,7 @@ These steps were done on Windows 11 with STM32CubeIDE. When you have all the dep
 
     ![alt text](README_assets/image-5.png)
 
-7. By now, you should see **Debug CM7** **RUNNING**. 
+7. By now, you should see **Debug CM7** say **RUNNING**. 
 
     ![alt text](README_assets/image-6.png)
     
@@ -69,7 +69,7 @@ These steps were done on Windows 11 with STM32CubeIDE. When you have all the dep
     
     ![alt text](README_assets/image-10.png)
 
-    In the **Call Stack** menu, you should now be able to toggle both LEDs by clicking **Continue** for whichever specified profile you want. The CM7 controls the Green LED and the CM4 controls the Yellow LED. 
+    In the **Call Stack** menu, you should now be able to toggle both LEDs by clicking **Continue** for whichever specified profile you want. The CM7 controls the Green LED and the CM4 controls the Yellow LED. You can remove either breakpoints to let the CM4/CM7 blink programs continue running without stopping.
 
     I have also set global variables count and count2 for the CM7 and CM4 cores respectively to monitor.
 
@@ -83,7 +83,7 @@ These steps were done on Windows 11 with STM32CubeIDE. When you have all the dep
 
     >Note: You cannot stop the CM7 and debug the CM4 by itself, the CM4 requires the CM7 in order to function. 
 
-    You can **Disconnect** the CM4 and debug the CM7 by itself
+    You can also **Disconnect** the CM4 and debug the CM7 by itself
 
     ![alt text](README_assets/image-14.png)
     
