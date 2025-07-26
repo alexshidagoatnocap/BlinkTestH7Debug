@@ -30,7 +30,7 @@ https://github.com/Marus/cortex-debug/issues/1008
 
 ## How to Use:
 
-These steps were done on Windows 11 with STM32CubeIDE. When you have all the dependencies and Cortex Debug settings configured, this is how you would use it:
+These steps were done on Windows 11 with STM32CubeIDE. When you have all the dependencies and Cortex Debug settings configured, you will need to configure the CMake build using the STM32Cube for VSCode extension. (Instructions coming soon)
 
 1. To begin, place some breakpoints down.
 
