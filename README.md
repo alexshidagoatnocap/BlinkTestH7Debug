@@ -2,6 +2,8 @@
 
 This repo is an example of how to setup dual-core debugging using the [Cortex Debug](https://github.com/Marus/cortex-debug) VSCode Extension. These instructions were particularly made for the STM32 Nucleo-H755ZI development boards.
 
+This setup currently works on Windows 11 with STM32CubeIDE installed.
+
 ## Setup:
 
 There are two ways you can set this up:
