@@ -29,6 +29,10 @@ These steps were done on Windows 11 with STM32CubeIDE. When you have all the dep
 
     ![alt text](README_assets/image.png)
 
+    I have set global variables count and count2 for the CM7 and CM4 cores respectively to monitor.
+
+    ![alt text](README_assets/image-11.png)
+
 2. Plug in STM32 Nucleo-H755ZI board
 3. Select Run and Debug or press Ctrl+Shift+D
 
@@ -69,11 +73,7 @@ These steps were done on Windows 11 with STM32CubeIDE. When you have all the dep
     
     ![alt text](README_assets/image-10.png)
 
-    In the **Call Stack** menu, you should now be able to toggle both LEDs by clicking **Continue** for whichever specified profile you want. The CM7 controls the Green LED and the CM4 controls the Yellow LED. You can remove either breakpoints to let the CM4/CM7 blink programs continue running without stopping.
-
-    I have also set global variables count and count2 for the CM7 and CM4 cores respectively to monitor.
-
-    ![alt text](README_assets/image-11.png)
+    In the **Call Stack** menu, you should now be able to see both LEDs toggle by clicking **Continue** for whichever specified profile you want. The Green LED is on the CM7 and the Yellow LED is on the CM4. You can remove either breakpoints to let the CM4/CM7 blink programs continue running without stopping.
 
     You can use this menu to switch between watching the CM7 and CM4 variables 
 
